@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Neuroimaging in Python &mdash; nitime 0.6 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/nitime.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="nitime 0.6 documentation" href="../../index.html" />
+    <link rel="up" title="API" href="../index.html" />
+    <link rel="next" title="analysis.coherence" href="nitime.analysis.coherence.html" />
+    <link rel="prev" title="algorithms.wavelet" href="nitime.algorithms.wavelet.html" />
+  <meta name="keywords" content="nipy, neuroimaging, python, neuroscience, time
+				 series">
+
+  </head>
+  <body role="document">
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+ <a href="../../index.html">
+  <img src="../../_static/nitime-banner-bg.png" alt="NIPY logo"  border="0" />
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="nitime.analysis.coherence.html" title="analysis.coherence"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="nitime.algorithms.wavelet.html" title="algorithms.wavelet"
+             accesskey="P">previous</a> |</li>
+  <li><a href="../../index.html">Nitime Home</a> |&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../documentation.html" >Nitime Documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" accesskey="U">API</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+
+  
+<h4> Site Navigation </h4>
+  <ul>
+    <li><a href="../../documentation.html">Documentation</a></li>
+    <li><a href="../../devel/index.html">Development</a></li>
+    <li><a href="../../news.html">News</a></li>
+  </ul>
+
+<h4> NIPY Community </h4>
+  <ul class="simple">
+    <li><a class="reference external"
+	href="http://nipy.sourceforge.net/">Community Home</a></li>
+    <li><a class="reference external"
+	href="http://nipy.sourceforge.net/software/projects/">NIPY Projects</a></li>
+    <li><a class="reference external"
+	href="http://mail.scipy.org/mailman/listinfo/nipy-devel">Mailing List</a></li>
+    <li><a class="reference external"
+	href="http://nipy.sourceforge.net/software/license/index.html">License</a></li>
+  </ul>
+
+
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">analysis.base</a><ul>
+<li><a class="reference internal" href="#module-analysis-base">Module: <code class="docutils literal"><span class="pre">analysis.base</span></code></a></li>
+<li><a class="reference internal" href="#baseanalyzer"><code class="docutils literal"><span class="pre">BaseAnalyzer</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="nitime.algorithms.wavelet.html"
+                        title="previous chapter">algorithms.wavelet</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="nitime.analysis.coherence.html"
+                        title="next chapter">analysis.coherence</a></p>
+
+<div id="searchbox-ml" style="display: none">
+  <h3>Search mailing list archive</h3>
+  <script type="text/javascript">
+    function mlsearch(curobj)
+    {
+    curobj.q.value="site:lists.neuroimaging.scipy.org/pipermail/nipy-devel/ "+curobj.userquery.value
+    }
+  </script>
+  <form action="http://www.google.com/search" method="get" onSubmit="mlsearch(this)">
+    <input name="userquery" size="13" type="text" /> <input type="submit" value="Go" />
+    <input name="q" type="hidden" />
+  </form>
+</div>
+  
+<div id="searchbox-site" style="display: none">
+  <h3>Search this site</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" size="13" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox-ml').show(0);</script>
+<script type="text/javascript">$('#searchbox-site').show(0);</script>
+
+
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="analysis-base">
+<h1>analysis.base<a class="headerlink" href="#analysis-base" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-analysis-base">
+<h2>Module: <code class="xref py py-mod docutils literal"><span class="pre">analysis.base</span></code><a class="headerlink" href="#module-analysis-base" title="Permalink to this headline">¶</a></h2>
+<p>Inheritance diagram for <code class="docutils literal"><span class="pre">nitime.analysis.base</span></code>:</p>
+<p class="graphviz">
+<img src="../../_images/inheritance-e5d694bb23fee3e066b0ec1bb89c87d15a57cee0.png" alt="Inheritance diagram of nitime.analysis.base" usemap="#inheritance780f93928d" class="inheritance"/>
+<map id="inheritance780f93928d" name="inheritance780f93928d">
+<area shape="rect" id="node1" href="#nitime.analysis.base.BaseAnalyzer" target="_top" title="Analyzer that implements the default data flow." alt="" coords="249,5,437,29"/>
+<area shape="rect" id="node2" href="nitime.descriptors.html#nitime.descriptors.ResetMixin" target="_top" title="A Mixin class to add a .reset() method to users of OneTimeProperty." alt="" coords="5,5,201,29"/>
+</map>
+</p>
+<span class="target" id="module-nitime.analysis.base"></span></div>
+<div class="section" id="baseanalyzer">
+<h2><a class="reference internal" href="#nitime.analysis.base.BaseAnalyzer" title="nitime.analysis.base.BaseAnalyzer"><code class="xref py py-class docutils literal"><span class="pre">BaseAnalyzer</span></code></a><a class="headerlink" href="#baseanalyzer" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="nitime.analysis.base.BaseAnalyzer">
+<em class="property">class </em><code class="descclassname">nitime.analysis.base.</code><code class="descname">BaseAnalyzer</code><span class="sig-paren">(</span><em>input=None</em><span class="sig-paren">)</span><a class="headerlink" href="#nitime.analysis.base.BaseAnalyzer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="nitime.descriptors.html#nitime.descriptors.ResetMixin" title="nitime.descriptors.ResetMixin"><code class="xref py py-class docutils literal"><span class="pre">nitime.descriptors.ResetMixin</span></code></a></p>
+<p>Analyzer that implements the default data flow.</p>
+<p>All analyzers inherit from this class at least have to
+* implement a __init__ function to set parameters
+* define the &#8216;output&#8217; property</p>
+<dl class="method">
+<dt id="nitime.analysis.base.BaseAnalyzer.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>input=None</em><span class="sig-paren">)</span><a class="headerlink" href="#nitime.analysis.base.BaseAnalyzer.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="nitime.analysis.base.BaseAnalyzer.parameterlist">
+<code class="descname">parameterlist</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nitime.analysis.base.BaseAnalyzer.parameterlist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="nitime.analysis.base.BaseAnalyzer.parameters">
+<code class="descname">parameters</code><a class="headerlink" href="#nitime.analysis.base.BaseAnalyzer.parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="nitime.analysis.base.BaseAnalyzer.set_input">
+<code class="descname">set_input</code><span class="sig-paren">(</span><em>input</em><span class="sig-paren">)</span><a class="headerlink" href="#nitime.analysis.base.BaseAnalyzer.set_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the input of the analyzer, if you want to reuse the analyzer
+with a different input than the original</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="nitime.analysis.coherence.html" title="analysis.coherence"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="nitime.algorithms.wavelet.html" title="algorithms.wavelet"
+             >previous</a> |</li>
+  <li><a href="../../index.html">Nitime Home</a> |&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../documentation.html" >Nitime Documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >API</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2009, Neuroimaging in Python team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.4.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+.. AUTO-GENERATED FILE -- DO NOT EDIT!
+
+testlib
+=======
+
+Module: :mod:`testlib`
+----------------------
+.. automodule:: nitime.testlib
+
+.. currentmodule:: nitime.testlib
+
+Functions
+---------
+
+
+.. autofunction:: nitime.testlib.fpw_opt_str
+
+
+.. autofunction:: nitime.testlib.import_nose
+
+
+.. autofunction:: nitime.testlib.test
+
